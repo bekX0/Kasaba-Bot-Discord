@@ -1,0 +1,18 @@
+{
+  "name": "kasaba",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord-modal": "^1.0.3",
+    "discord.js": "^13.8.1",
+    "dotenv": "^16.0.1"
+  }
+}
