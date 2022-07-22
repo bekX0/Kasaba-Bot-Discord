@@ -7,7 +7,7 @@ export default{
     description:"Yeni erkek üyeleri kayıt etmek için kullanılır.",
     usage:"!e <isim> <yaş>",
     permissions:"MANAGE_NICKNAMES",
-    execute(message, args){
+    async execute(message, args){
         if (args.lenght>3) return message.reply({embeds:[embed("Çok fazla parametre girdin!!", "Hata!", "RED")]})
         var user = message.mentions.members.first()
         if(!user) return message.reply({embeds:[embed("Kullanıcı girilmedi!", "Hata!", "RED")]})
@@ -18,9 +18,9 @@ export default{
         const r_roles= '968235875232264252'
 
         try {
-            user.roles.add(g_roles)
-            user.roles.remove(r_roles)
-            user.setNickname(`${name} » ${age}`)
+            await user.roles.add(g_roles)
+            await user.roles.remove(r_roles)
+            await user.setNickname(`${name} » ${age}`)
         } catch (error) {
             console.log(error)
             message.reply({embeds:[embed("Bir hata oluştu!", "", "RED")]})
