@@ -4,7 +4,7 @@ import { readdirSync } from "fs";
 
 const client = new Client({
   intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS", "GUILD_PRESENCES", "GUILD_VOICE_STATES"],
-  presence: { activities: [{ name: "bekX", type: "WATCHING" }] },
+  presence: { activities: [{ name: "KASABA HALKINI", type: "WATCHING" }] },
 });
 //Utils
 client.embed= await import("./utils/bot/embed.js").then(m=>m.default)

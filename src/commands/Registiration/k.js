@@ -32,7 +32,13 @@ export default{
             .setTitle("Bir kullanıcı kayıt edildi!")
             .setDescription(`Kaydedilen kullanıcı <@${user.id}>`)
         channel.send({embeds:[mesaj]})
-        user.send({embeds:[embed(`Sunucumuza kayıt oldunuz.\nAramıza hoş geldin <@${user.id}>, kuralları okumayı unutma.`, "Hoşgeldin!", "GREEN")]})
+        try {
+            user.send({embeds:[embed(`Sunucumuza kayıt oldunuz.\nAramıza hoş geldin <@${user.id}>, kuralları okumayı unutma.`, "Hoşgeldin!", "GREEN")]})
+        } catch (error) {
+            console.log(error)
+        }
+        
+        
     }
 
 }
