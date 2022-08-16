@@ -31,8 +31,9 @@ export default{
             .setFooter({text:message.author.username, iconURL:message.author.displayAvatarURL()})
             .setTitle("Bir kullanıcı kayıt edildi!")
             .setDescription(`Kaydedilen kullanıcı <@${user.id}>`)
-        channel.send({embeds:[mesaj]})
+        
         try {
+            channel.send({embeds:[mesaj]})
             user.send({embeds:[embed(`Sunucumuza kayıt oldunuz.\nAramıza hoş geldin <@${user.id}>, kuralları okumayı unutma.`, "Hoşgeldin!", "GREEN")]})
         } catch (error) {
             console.log(error)
