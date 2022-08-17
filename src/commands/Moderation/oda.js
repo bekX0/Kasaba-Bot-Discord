@@ -12,7 +12,12 @@ export default{
                     .setEmoji("🛂")
                     .setLabel("Oda Açmak İçin Tıkla")
                     .setStyle("SUCCESS")
-                    .setCustomId("oda")
+                    .setCustomId("oda"),
+                new MessageButton()
+                    .setEmoji("🔢")
+                    .setLabel("Oda Limiti Değiştir")
+                    .setStyle("PRIMARY")
+                    .setCustomId("oda_limit")
             )
             channel.send({content:"https://cdn.discordapp.com/attachments/308536090380468224/996542516428025946/Ozel_oda.png", components:[row]})
         
