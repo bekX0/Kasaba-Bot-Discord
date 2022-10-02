@@ -14,7 +14,7 @@ export default client =>{
             .setTimestamp(Date.now())
     })
     try {
-        
+        database.deleteOne(member.id)
         logchannel.send({embeds:[logembed]})
         
     } catch (error) {
