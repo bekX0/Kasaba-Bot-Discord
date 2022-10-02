@@ -1,6 +1,7 @@
 import { Collection, MessageEmbed } from "discord.js"
 import embed from "../../utils/bot/embed.js"
 import "dotenv/config"
+import * as database from "../../utils/database/mongoose_methods.js"
 
 export default{
     name:"e",
@@ -21,6 +22,7 @@ export default{
             await user.roles.add(g_roles)
             await user.roles.remove(r_roles)
             await user.setNickname(`${name} » ${age}`)
+            if (await database.fetch(user.id)) console.log("Bir kayıt daha oluşturuldu!")
         } catch (error) {
             console.log(error)
             message.reply({embeds:[embed("Bir hata oluştu!", "", "RED")]})

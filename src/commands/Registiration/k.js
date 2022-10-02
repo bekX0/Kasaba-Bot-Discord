@@ -19,6 +19,7 @@ export default{
 
 
         try {
+            if (await database.fetch(user.id)) console.log("Bir kayıt daha oluşturuldu!")
             await user.roles.add(g_roles)
             await user.roles.remove(r_roles)
             await user.setNickname(`${name} » ${age}`)

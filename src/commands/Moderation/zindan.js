@@ -10,6 +10,7 @@ export default{
         if(user.roles.cache.map(role => role.id).includes('1015674944232902667')){
             try{
                 await user.roles.remove('1015674944232902667')
+                await user.roles.add('968229418453565511')
                 message.reply({embeds:[embed(`<@${user.id}> adlı kişi zindandan başarıyla çıkarıldı!\n Umarım artık iyi bir insan olur...`, "ÖZGÜRLÜÜÜK!", "GREEN")]})
             }catch(e){
                 message.reply({embeds:[embed(`Özgürleştirme işlemi başarısız oldu. Yetkililer bununla ilgilenecek...`, "Üzgünüm!", "RED")]})
@@ -19,6 +20,7 @@ export default{
             
             try{
                 await user.roles.add('1015674944232902667')
+                await user.roles.remove('968229418453565511')
                 message.reply({embeds:[embed(`<@${user.id}> adlı kişi zindana tekmelendi!\n Cezası bittiğinde onu zindandan çıkarmayı unutma.🥺🥺`, "ZİNDANA YOLCULUK!", "GREEN")]})
             }catch(e){
                 message.reply({embeds:[embed(`Zindana atma işlemi başarısız oldu. Yetkililer bununla ilgilenecek...`, "Üzgünüm!", "RED")]})

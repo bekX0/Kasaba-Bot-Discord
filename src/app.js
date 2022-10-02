@@ -1,6 +1,7 @@
 import { Client, Collection } from "discord.js";
 import "dotenv/config";
 import { readdirSync } from "fs";
+import mongoose, { mongo } from "mongoose"
 
 const client = new Client({
   intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS", "GUILD_PRESENCES", "GUILD_VOICE_STATES"],
@@ -9,6 +10,11 @@ const client = new Client({
 //Utils
 client.embed= await import("./utils/bot/embed.js").then(m=>m.default)
 client.emoji = (emojiName) => {return client.guilds.cache.get(process.env.OWNER_GUILD_ID).emojis.cache.find(e => e.name == emojiName)}
+
+//Database Initialize
+await mongoose.connect("mongodb://localhost:27017/Kasaba_db?retryWrites=true&w=majority").then( () =>{
+  console.log("Veritabanı bağlantısı", "\x1b[32m" ,"  BAŞARILI.", "\x1b[0m")
+})
 
 
 // Voice Manager

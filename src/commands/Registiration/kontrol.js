@@ -8,6 +8,7 @@ export default{
     execute(message){
         var user = message.mentions.members 
         if(user.size==0) return message.reply({embeds:[embed("Kullanıcı girilmedi!", "Hata!", "RED")]})
+        console.log(user)
         user.forEach(member => {
             var mesaj = new MessageEmbed()
                 .setTitle("Gizli Dosya 🕵️")

@@ -2,7 +2,7 @@ import { MessageEmbed } from "discord.js"
 import "dotenv/config"
 
 export default client =>{
-    client.on('guildMemberAdd', member =>{
+    client.on('guildMemberAdd', async member =>{
         const logchannel = member.guild.channels.cache.get(`${process.env.iolog}`)
         const kayitch = member.guild.channels.cache.get("1007740304373317642")
         const embed = new MessageEmbed()
@@ -19,7 +19,7 @@ export default client =>{
             .setTimestamp(Date.now())
         
         try {
-            member.send({embeds:[embed]})
+            
             logchannel.send({embeds:[logembed]})
             kayitch.send(`<@${member.id}>`).then(msg => {
             setTimeout(() => msg.delete(), 500)
@@ -27,6 +27,12 @@ export default client =>{
         } catch (error) {
             console.log(error)
         }
-        
+        //!HATA VERİYOR
+        // try {
+        //     member.send({embeds:[embed]})
+        // } catch (error) {
+        //     console.log(error
+        //         )
+        // }
     })
 }

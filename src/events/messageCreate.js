@@ -1,9 +1,15 @@
 import { MessageEmbed } from "discord.js"
 import "dotenv/config"
+import * as database from "../utils/database/mongoose_methods.js" 
 
 const prefix = process.env.prefix
 export default client =>{
-    client.on("messageCreate", message =>{
+    client.on("messageCreate",async message =>{
+        //db create
+        console.log(await database.fetch(message.member.id))
+
+
+
         //Message LOG
         //! admin kanalları görmezden gelmeli 
         //? sadece özel kelime içerenleri gösterebilir(daha az yük) 
@@ -18,6 +24,11 @@ export default client =>{
         // if(!message.author.bot && message.channel.id!=process.env.messlog){
         //     channel.send({embeds:[mesembed]})
         // }
+
+
+
+
+
         //Sosyal Medya Kontrol
         const channels = ['968246333741862982', '968246148773077002', '968246933015633920', '968252747168227409']
         if((message.content.startsWith(prefix)== false) && !message.author.bot){
