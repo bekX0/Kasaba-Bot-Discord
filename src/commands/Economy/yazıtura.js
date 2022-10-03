@@ -26,11 +26,11 @@ export default{
         let winner = chance<6 ? 't' : 'y'
         if(winner === opt){
             await database.update(member_id, {balance: balance + deal})
-            message.reply({embeds:[embed(`${message.member.nickname} mevcut bakiyen:\n${balance + deal}`, "Kazandın!!", "#4dff4d")]})
+            message.reply({embeds:[embed(`${message.member.nickname} mevcut bakiyen:\n${balance + deal} Kasaba Jetonu`, "Kazandın!!", "#4dff4d")]})
         }
         else{
             await database.update(member_id, {balance: balance - deal})
-            message.reply({embeds:[embed(`${message.member.nickname} mevcut bakiyen:\n${balance - deal}`, "Kaybettin...", "#ffff4d")]})
+            message.reply({embeds:[embed(`${message.member.nickname} mevcut bakiyen:\n${balance - deal} Kasaba Jetonu`, "Kaybettin...", "#ffff4d")]})
         }
     }
 }

@@ -15,6 +15,6 @@ export default{
 
 
         const data = await database.fetch(message.member.id)
-        message.reply({embeds:[embed(`Mevcut bakiyen:\n${data.balance}`, "Şu Cüzdana Bir Bakalım", "#0066ff")]})
+        message.reply({embeds:[embed(`Mevcut bakiyen:\n${data.balance} Kasaba Jetonu`, "Şu Cüzdana Bir Bakalım", "#0066ff")]})
     }
 }

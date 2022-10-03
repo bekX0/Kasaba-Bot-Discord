@@ -33,8 +33,9 @@ export default client =>{
 
 
 
-        //Sosyal Medya Kontrol
-        const channels = ['968246333741862982', '968246148773077002', '968246933015633920', '968252747168227409']
+        //uvote downvote channels
+        //! 1026525114965164142 silinecek yarışma için
+        const channels = ['968246333741862982', '968246148773077002', '968246933015633920', '968252747168227409', '1026525114965164142']
         if((message.content.startsWith(prefix)== false) && !message.author.bot){
             channels.forEach(channel => {
                 if(channel== message.channel.id){

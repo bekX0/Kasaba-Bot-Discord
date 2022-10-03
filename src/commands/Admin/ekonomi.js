@@ -8,6 +8,7 @@ export default{
     usage:"",
     permissions:"ADMINISTRATOR",
     async execute(message, args){
+        
         if(process.env.owner_id != message.member.id) return message.reply({embeds:[embed(``, "Sen Ekonomist Değilsin!", "RED")]})
         const data = await database.fetch(message.guild.id)
         if(args.length ===0){

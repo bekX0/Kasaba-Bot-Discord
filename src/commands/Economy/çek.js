@@ -37,7 +37,7 @@ export default{
         }
         try {
             database.update(member_id, {balance})
-            message.reply({embeds:[embed(`${message.member.nickname} mevcut bakiyen:\n${balance}`, "Bugünü De Çıkardık!", "GREEN")]})
+            message.reply({embeds:[embed(`${message.member.nickname} mevcut bakiyen:\n${balance} Kasaba Jetonu`, "Bugünü De Çıkardık!", "GREEN")]})
         } catch (error) {
             console.log(error)
         }
