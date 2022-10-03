@@ -13,7 +13,7 @@ export default client =>{
             .setFooter({text:`${client.user.username}`, iconURL:`${client.user.displayAvatarURL()}`})
             .setTimestamp(Date.now())
             try {
-                database.deleteOne(member.id)
+                //database.deleteOne(member.id)
                 logchannel.send({embeds:[logembed]})
                 
             } catch (error) {

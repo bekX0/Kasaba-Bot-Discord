@@ -5,8 +5,12 @@ import * as database from "../utils/database/mongoose_methods.js"
 const prefix = process.env.prefix
 export default client =>{
     client.on("messageCreate",async message =>{
-        //db create
-        console.log(await database.fetch(message.member.id))
+        //?db create sonradan hata vermemeli iptal edildi
+        // try {
+        //     await database.fetch(message.member.id)
+        // } catch (error) {
+        //     console.log(error)
+        // }
 
 
 

@@ -5,7 +5,7 @@ export default mongoose.model("members", new mongoose.Schema({
     name:{type: String, required: false},
     age:{type: Number, required: false},
     b_day: {type:Date},
-    balance: {type: Number, default: 0.00},
+    balance: {type: Number, default: 0},
     level: {type:Number, default:0},
     xp: {type:Number, default:0.00}
 }))
