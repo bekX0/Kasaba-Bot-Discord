@@ -19,6 +19,10 @@ export default{
         const balance =data.balance
         // geçersiz argüman
         if(!opt || !deal) return message.reply({embeds:[embed(``, "Geçersiz Kullanım", "RED")]})
+        // t y
+        if(opt != 't' || opt != 'y') return message.reply({embeds:[embed(``, "Geçersiz Kullanım", "RED")]})
+        // negatif sayı
+        if(deal<0) return message.reply({embeds:[embed(``, "Geçersiz Kullanım", "RED")]})
         //yetersiz bakiye
         if(balance<deal) return message.reply({embeds:[embed(`Biraz çalışmayı dene...`, "Paran Yok", "RED")]})
         //şans
