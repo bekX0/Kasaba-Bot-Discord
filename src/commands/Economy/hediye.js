@@ -15,6 +15,7 @@ export default{
         if(!server_data.economy) return
         // argüman kontrol
         const target = message.mentions.members.first().id
+		const target_balance= await database.fetch(target)
         if(!target || value == undefined) return message.reply({embeds:[embed(``, "Hatalı Kullanım!", "RED")]}) 
         //negatif sayı önleme
         if(value<1) return message.reply({embeds:[embed(`Bir sayı gir veya 0 dan büyük bir sayı dene!`, "Hatalı Kullanım!", "RED")]}) 
@@ -24,9 +25,9 @@ export default{
         if(balance<value) return message.reply({embeds:[embed(``, "Paran Yetersiz!", "#ffff66")]}) 
 
         try {
-            await database.update(target, {balance: balance+value})
+            await database.update(target, {balance: target_balance.balance+value})
             await database.update(message.member.id, {balance: balance-value})
-            message.reply({embeds:[embed(`<@${target}>, <@${message.member.id}> sana ${value}`, "Hediyelendin!", "#4da6ff")]})
+            message.reply({embeds:[embed(`<@${target}>, <@${message.member.id}> sana ${value} Kasaba Jetonu`, "Hediyelendin!", "#4da6ff")]})
         } catch (error) {
             console.log(error)
             console.log("hediye.js hata verdi")
