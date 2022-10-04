@@ -29,7 +29,7 @@ export default{
         }
         else if(args[0]==='belirle'){
             await database.update(member.id, {balance: value})
-            message.reply({embeds:[embed(`<@${member.id}> adlı kişiye ${balance} Kasaba Jetonu Belirlendi!\n Yeni Bakiyesi :${value}`, ":))", "#cc33ff")]}) 
+            message.reply({embeds:[embed(`<@${member.id}> adlı kişiye ${value} Kasaba Jetonu Belirlendi!\n Yeni Bakiyesi :${value}`, ":))", "#cc33ff")]}) 
         }
         else{
             message.reply({embeds:[embed(``, "HATALI KULLANIM", "RED")]}) 
