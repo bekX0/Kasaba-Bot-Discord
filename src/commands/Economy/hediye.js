@@ -21,7 +21,7 @@ export default{
         //yeterli bakiye sorgusu
         const user_data = await database.fetch(message.member.id)
         let balance = user_data.balance
-        if(balance<target) return message.reply({embeds:[embed(``, "Paran Yetersiz!", "#ffff66")]}) 
+        if(balance<value) return message.reply({embeds:[embed(``, "Paran Yetersiz!", "#ffff66")]}) 
 
         try {
             await database.update(target, {balance: balance+value})
